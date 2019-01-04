@@ -1,0 +1,10 @@
+
+mqtt:
+  server: tcp://zhangtory.com:1883
+  clientid: WebServer
+  username: client0
+  password: client0
+
+
+server:
+  port: 8086
