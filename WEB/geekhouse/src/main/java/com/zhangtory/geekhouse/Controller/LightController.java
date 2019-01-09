@@ -14,9 +14,9 @@ public class LightController {
     @Autowired
     private LightService lightService;
 
-    @RequestMapping("/index")
-    public String index() {
-        return "index";
+    @RequestMapping("/light")
+    public String light() {
+        return "light";
     }
 
     @GetMapping("/light/{cmd}")
@@ -25,6 +25,5 @@ public class LightController {
         this.lightService.lightCtl(cmd);
         return "success";
     }
-
 
 }
