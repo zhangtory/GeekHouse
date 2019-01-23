@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GeekHouse 控制中心</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link href="css/starter-template.css" rel="stylesheet">
-    <script src="js/controller.js"></script>
+    <link href="/css/starter-template.css" rel="stylesheet">
+    <script src="/js/controller.js"></script>
+
+    <@block name="head"></@block>
 </head>
 
 <body>
@@ -27,7 +31,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/index">首页</a></li>
                 <li class="active"><a href="/light">灯光</a></li>
-                <li class="active"><a href="/ir">红外</a></li>
+                <li class="active"><a href="/ir">空调</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -35,7 +39,5 @@
 
 <@block name="mainpage"></@block>
 
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
