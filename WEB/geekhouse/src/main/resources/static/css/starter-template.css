@@ -8,3 +8,10 @@ body {
 .dev_control {
     padding-left: 20px;
 }
+
+.addplan_ul {
+    line-height: 4rem;
+}
+.addplan_ul li {
+    font-size: 2rem;
+}

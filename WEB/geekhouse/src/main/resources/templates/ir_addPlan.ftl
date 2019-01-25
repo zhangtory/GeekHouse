@@ -6,8 +6,9 @@
 
         <div>
             <form action="/ir/addPlan" method="post">
-                <ul>
+                <ul class="addplan_ul">
                     <li>
+                        <span>执行时间：</span>
                         <select name="hour">
                         <#list 0..23 as h>
                             <option value="${h}">${h}</option>
@@ -22,7 +23,7 @@
                         <span>分</span>
                     </li>
                     <li>
-                        <span>操作选择</span>
+                        <span>操作选择：</span>
                         <select name="option">
                         <#list oplist as op>
                             <option value="${op['value']}">${op['name']}</option>
@@ -31,7 +32,7 @@
                     </li>
                 </ul>
 
-                <button type="submit" class="btn_control btn btn-lg btn-success">保存</button>
+                <button type="submit" class="btn btn-lg btn-success">保存</button>
             </form>
         </div>
 

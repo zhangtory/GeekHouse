@@ -52,6 +52,15 @@
             <artifactId>spring-integration-mqtt</artifactId>
         </dependency>
 
+        <!-- quartz -->
+        <!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
+
         <!--rapid-framework 模板继承框架-->
         <dependency>
             <groupId>com.googlecode.rapid-framework</groupId>
