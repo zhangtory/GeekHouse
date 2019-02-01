@@ -12,6 +12,10 @@ public class LightService {
     @Autowired
     private MqttServer mqttServer;
 
+    /**
+     * 灯光控制，根据对应的指令，发布灯光的控制消息
+     * @param cmd 指令
+     */
     public void lightCtl(String cmd) {
         if ("ON".equals(cmd)) {
             byte[] payload = {0x01, 0x01, 0x50};

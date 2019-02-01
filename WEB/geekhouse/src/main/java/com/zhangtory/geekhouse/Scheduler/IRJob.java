@@ -5,9 +5,14 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 红外发射器
+ */
+@Component
 public class IRJob implements Job {
 
     @Autowired
