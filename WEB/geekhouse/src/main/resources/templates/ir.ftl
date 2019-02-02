@@ -9,18 +9,18 @@
             <table class="table table-striped">
                 <tr>
                     <th>时间</th>
+                    <th>命令</th>
                     <th>操作</th>
-                    <th>状态</th>
                 </tr>
                 <tr>
                     <td>7：00</td>
                     <td>制热28度</td>
-                    <td>启用</td>
+                    <td>删除</td>
                 </tr>
                 <tr>
                     <td>7：30</td>
                     <td>关闭空调</td>
-                    <td>启用</td>
+                    <td>删除</td>
                 </tr>
             </table>
         </div>

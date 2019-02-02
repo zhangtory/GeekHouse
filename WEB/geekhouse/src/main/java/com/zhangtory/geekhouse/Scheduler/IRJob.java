@@ -1,9 +1,10 @@
 package com.zhangtory.geekhouse.Scheduler;
 
 import com.zhangtory.geekhouse.Mqtt.MqttServer;
+import com.zhangtory.geekhouse.Utils.CMD;
+import org.eclipse.paho.client.mqttv3.MqttException;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.text.SimpleDateFormat;
@@ -19,11 +20,18 @@ public class IRJob implements Job {
     private MqttServer mqttServer;
 
     @Override
-    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+    public void execute(JobExecutionContext jobExecutionContext) {
         Integer opCode = jobExecutionContext.getMergedJobDataMap().getInt("opCode");
         System.out.println(opCode);
+        // 通过opcode查找对应的payload
 
-        System.out.println(mqttServer);
+        byte[] payload = {0x02, 0x01, 0x00, 0x00};
+        try {
+            mqttServer.publish(CMD.IR_COMMAND_TOPIC, payload);
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+
 
         Date date = new Date();
         SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
