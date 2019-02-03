@@ -1,6 +1,7 @@
 package com.zhangtory.geekhouse.Scheduler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zhangtory.geekhouse.Scheduler.Job.IRJob;
 import org.quartz.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,13 +30,13 @@ public class QuartzManager implements ApplicationRunner {
      * 初始化数据库中的定时任务
      * @throws SchedulerException
      */
-    public void initScheduler() throws SchedulerException, ClassNotFoundException, IOException {
+    private void initScheduler() throws SchedulerException, ClassNotFoundException, IOException {
         logger.info("init scheduler...");
         // 从数据库中获取定时任务
 
-        String nameIdentity = String.valueOf(1L);
+        String nameIdentity = String.valueOf(3L);
         String groupIdentity = "ir";
-        String cronString = cronPressCreat(13,20);
+        String cronString = cronPressCreat(10,14);
 
         String classname = IRJob.class.getName();
         Class cls = Class.forName(classname);
@@ -71,6 +72,28 @@ public class QuartzManager implements ApplicationRunner {
         scheduler.scheduleJob(jobDetail, cronTrigger);
     }
 
+    /**
+     * 删除定时任务
+     * @param nameIdentity
+     * @param groupIdentity
+     */
+    public void deleteScheduler(String nameIdentity, String groupIdentity) {
+
+    }
+
+    /**
+     * 修改定时任务
+     * @param nameIdentity
+     * @param groupIdentity
+     * @param cronExpression
+     * @param jobClass
+     * @param dataMap
+     */
+    public void modifiedScheduler(String nameIdentity, String groupIdentity, String cronExpression,
+                                  Class jobClass, Map<String, Object> dataMap) {
+
+    }
+
     private String cronPressCreat(int hour, int minute) {
         StringBuffer sb = new StringBuffer("0 ");
         sb.append(String.valueOf(minute));
@@ -87,6 +110,6 @@ public class QuartzManager implements ApplicationRunner {
      */
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        initScheduler();
+//        initScheduler();
     }
 }

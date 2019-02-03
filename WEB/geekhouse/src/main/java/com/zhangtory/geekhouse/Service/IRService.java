@@ -1,6 +1,5 @@
 package com.zhangtory.geekhouse.Service;
 
-import com.zhangtory.geekhouse.Scheduler.IRJob;
 import com.zhangtory.geekhouse.Scheduler.QuartzManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
